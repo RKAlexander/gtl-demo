@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title>%%replyname%%</title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+ <link rel="Shortcut Icon" type="image/x-icon" href="https://image.e.pnc.com/lib/fe9f1573746d047c74/m/18/9df98d47-e7c7-46b0-ae6f-a0dc7c05094f.png" /> <!-- favicon for view in browser -->
+
+    <!-- Web Font / @font-face : BEGIN -->
+
+    <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+    <!--[if mso]>
+        <style>
+            * {
+                font-family: Arial, sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+ 
+ <style>
+  @font-face {
+    font-family: 'PNC Brand';
+    font-style: normal;
+    font-weight: normal;
+    src: local('PNCBrand-Regular'), url(https://www.pnc.com/etc/designs/pnc-foundation/fonts/pnc-brand/PNCBrandReg.woff) format('woff');
+    mso-font-alt: 'Arial';
+}
+@font-face {
+    font-family: 'PNC Brand';
+    font-style: normal;
+    font-weight: bold;
+    src: local('PNCBrand-Bold'), url(https://www.pnc.com/etc/designs/pnc-foundation/fonts/pnc-brand/PNCBrandBol.woff) format('woff');
+    mso-font-alt: 'Arial';
+}
+ </style>
+    <!-- Web Font / @font-face : END -->
+
+    <!-- CSS Reset -->
+    <style>
+
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+        body {
+            margin: 0 auto !important;
+            padding: 0 !important;
+            height: 100% !important;
+            width: 100% !important;
+        }
+
+        /* What it does: Stops email clients resizing small text. */
+        * {
+            -ms-text-size-adjust: 100%;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* What it does: Centers email on Android 4.4 */
+        div[style*="margin: 16px 0"] {
+            margin:0 !important;
+        }
+
+        /* What it does: Stops Outlook from adding extra spacing to tables. */
+        table,
+        td {
+            mso-table-lspace: 0pt !important;
+            mso-table-rspace: 0pt !important;
+        }
+
+
+        /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+        table {
+            border-spacing: 0 !important;
+            border-collapse: collapse !important;
+            table-layout: fixed !important;
+            margin: 0 auto !important;
+        }
+        table table table {
+            table-layout: auto;
+        }
+
+        /* What it does: Uses a better rendering method when resizing images in IE. */
+        img {
+            -ms-interpolation-mode:bicubic;
+        }
+
+        /* What it does: A work-around for email clients meddling in triggered links. */
+        *[x-apple-data-detectors],  /* iOS */
+        .x-gmail-data-detectors,    /* Gmail */
+        .x-gmail-data-detectors *,
+        .aBn {
+            border-bottom: 0 !important;
+            cursor: default !important;
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
+
+        /* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+        .a6S {
+            display: none !important;
+            opacity: 0.01 !important;
+        }
+        /* If the above doesn't work, add a .g-img class to any image in question. */
+        img.g-img + div {
+            display:none !important;
+           }
+
+        /* What it does: Prevents underlining the button text in Windows 10 */
+        .button-link {
+            text-decoration: none !important;
+        }
+
+        /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+        /* Create one of these media queries for each additional viewport size you'd like to fix */
+        /* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting */
+        @media only screen and (min-device-width: 375px) and (max-device-width: 413px) { /* iPhone 6 and 6+ */
+            .email-container {
+                min-width: 375px !important;
+            }
+        }
+
+    </style>
+
+    <!-- Progressive Enhancements -->
+    <style>
+
+        /* What it does: Hover styles for buttons */
+        .button-td,
+        .button-a {
+            transition: all 100ms ease-in;
+        }
+        .button-td:hover,
+        .button-a:hover {
+            background: #555555 !important;
+            border-color: #555555 !important;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 600px) {
+
+            /* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+            .fluid {
+                width: 100% !important;
+                max-width: 100% !important;
+                height: auto !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+            }
+
+            /* What it does: Forces table cells into full-width rows. */
+            .stack-column,
+            .stack-column-center {
+                display: block !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                direction: ltr !important;
+            }
+            /* And center justify these ones. */
+            .stack-column-center {
+                text-align: center !important;
+            }
+          
+           /* And left justify these ones. */
+            .stack-column-left {
+                text-align: left !important;
+            }
+           /* And hide these ones. */
+            .stack-column-hide {
+                display: none !important;
+            }
+
+            /* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+            .center-on-narrow {
+                text-align: center !important;
+                display: block !important;
+                margin-left: auto !important;
+                margin-right: auto !important;
+                float: none !important;
+            }
+            table.center-on-narrow {
+                display: inline-block !important;
+            }
+
+            /* What it does: Adjust typography on small screens to improve readability 
+            .email-container p {
+                font-size: 17px !important;
+                line-height: 22px !important;
+            }*/
+        }
+
+    </style>
+
+    <!-- What it does: Makes background images in 72ppi Outlook render at correct size. -->
+    <!--[if gte mso 9]>
+    <xml>
+        <o:OfficeDocumentSettings>
+            <o:AllowPNG/>
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+        </o:OfficeDocumentSettings>
+    </xml>
+    <![endif]-->
+   %%[
+ var @leadid
+ set @leadid = leadid
+ var @Json2
+ set @Json2 = ' {
+    "defaultStyles": {
+        "bgColor": "#C4C6CA",
+        "contentBgColor": "#FFFFFF",
+        "textColor": "#243444"
+    },
+    "defaultOrganisms": {
+        "leadid": "90606DDA01",
+        "subjectline": "Remember to use your PNC Mobile app this summer.",
+        "previewText": "Enjoy the convenience of your PNC Mobile app.",
+        "preheader":{
+        "type":"2Column_Layout",
+            "ratio":"7030",
+            "bgColor": "#FFFFFF",
+            "textColor": "#243444",
+            "leftColumn": "preheaderMessage",
+            "leftStackStyle":"stack-column",
+            
+            "preheaderMessage": "It’s time to get started with PNC WorkPlace Banking® and Virtual Wallet®.",
+            "rightColumn": "vawpLink",
+            "rightStackStyle":"stack-column-left"
+            
+        },
+        "header": {
+        "type":"2Column_Layout",
+            "bgColor": "#5B6771",
+            "textColor": "#FFFFFF",
+            "leftColumn": "virtualWalletLogo_white",
+            "leftStackStyle":"stack-column",
+            "rightColumn": "header_nav",
+            "rightStackStyle":"stack-column-hide"
+        },
+        "hero": {
+              "layout":"1Column_Layout",
+              "contentType":"hero_title",
+              "bgColor":"#FFFFFF",
+              "contentBgColor":"#243444",
+              "textColor":"#FFFFFF",
+              "content":"Welcome to PNC WorkPlace® Banking and Virtual Wallet® for digital banking.",
+              "slotPadding":"padding:15px 0;",
+              "blockPadding":"padding:25px 36px;"
+        },
+        "bodySection":{
+        "slot1":{
+        "layout":"CTA_Layout",
+        "bgColor":"#FFFFFF",
+        "blockPadding":"padding:0 36px;",
+        "slotPadding":"padding:10px 0;",
+        
+        "lead":"Get started by setting up Direct Deposit.",
+        "leadTextColor":"#F58025",
+        "pColor":"#243444",
+          "paragraph":"Get your paycheck the same day that you&apos;re paid.",
+          "cta":"Learn More &gt;",
+          "ctaBgColor":"#F58025",
+        "ctaAlias":"cta_test_alias",
+        "ctaLink":"https://www.pnc.com",
+        "ctaTextColor":"#FFFFFF"
+        },
+         "slot2":{
+        "layout":"CTA_Layout",
+        "bgColor":"#FFFFFF",
+        "contentBgColor":"#C4C6CA",
+         "blockPadding":"padding:0 15px;",
+        "slotPadding":"padding:10px 0;",
+        "contentPadding":"padding:26px;",
+        
+        "lead":"Be on the lookout.",
+        "leadTextColor":"#243444",
+        "pColor":"#243444",
+          "paragraph":"Your account information, which includes your account number, routing number, debit card and online banking/debit card PIN, is on its way in the mail – if it hasn’t already arrived."
+        },
+                 "slot3":{
+        "layout":"2Column_List_Layout",
+        "bgColor":"#FFFFFF",
+        "contentBgColor":"#FFFFFF",
+         "blockPadding":"padding:0 15px;",
+        "slotPadding":"padding:10px 0;",
+        "contentPadding":"padding:26px;",
+     "lead":"Budget better with our money management tools.",
+        "leadTextColor":"#F58025",
+        "pColor":"#243444",
+            "ratio":"5050",
+            "bgColor": "#FFFFFF",
+            "textColor": "#243444",
+            "leftColumn": "HorizontalListItem",
+            "leftColumnListItem":{
+            "listItemImage":"Icon_VW_SpendingBudgets",
+            "listItemLead":"This is my left lead tttile",
+            "listItemParagraph":"This is my left paragraph"
+            },
+         
+            "leftStackStyle":"stack-column",
+            "rightColumn": "HorizontalListItem",
+            "rightStackStyle":"stack-column",
+           
+            "rightColumnlistItemImage":"Icon_VW_SpendingBudgets",
+            "rightColumnLead":"This is my tight lead tttile",
+            "rightColumnParagraph":"This is my right paragraph"
+            
+            
+        }
+        
+        
+          
+}
+    }
+}' 
+]%%
+
+</head>
+ 
+ 
+
+        <script runat=server>
+    function set(key, val) {
+      var newVal = val != null ? Stringify(val) : "{}";
+      Variable.SetValue(key, newVal);
+    }
+    Platform.Load("Core","1");
+    var Json=Variable.GetValue("@Json2");
+    var _JsonObject = eval('(' + Json + ')');
+    set("@DefaultStyles", _JsonObject.defaultStyles);
+    set("@DefaultOrganisms", _JsonObject.defaultOrganisms);
+    set("@DefaultHeader", _JsonObject.defaultOrganisms.header);
+          set("@DefaultPreheader", _JsonObject.defaultOrganisms.preheader);
+           set("@DefaultHero", _JsonObject.defaultOrganisms.hero);
+          set("@DefaultBody", _JsonObject.defaultOrganisms.bodySection);
+          set("@BodySlot1", _JsonObject.defaultOrganisms.bodySection.slot1);
+          set("@BodySlot2", _JsonObject.defaultOrganisms.bodySection.slot2);
+           set("@BodySlot3", _JsonObject.defaultOrganisms.bodySection.slot3);
+          
+          //Write(_JsonObject.defaultOrganisms.bodySection.slot3.pColor);
+          
+  </script>
+        {{.dataobject DefaultStylesVar type=variable source=@DefaultStyles maxrows=20}}
+  {{.data}} 
+  {"target": "@DefaultStyles"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#DefaultStylesVar}}  
+  {{.dataobject DefaultOrganismsVar type=variable source=@DefaultOrganisms maxrows=20}}
+  {{.data}} 
+  {"target": "@DefaultOrganisms"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#DefaultOrganismsVar}}
+ 
+<body width="100%" bgcolor="{{bgColor}}" style="margin: 0; mso-line-height-rule: exactly;">
+    <center style="width: 100%; background: {{bgClor}}; text-align: left;">
+
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+        <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
+          {{previewText}}
+            
+        </div>
+        <!-- Visually Hidden Preheader Text : END -->
+
+        <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 680px.
+            2. MSO tags for Desktop Windows Outlook enforce a 680px width.
+            Note: The Fluid and Responsive templates have a different width (600px). The hybrid grid is more "fragile", and I've found that 680px is a good width. Change with caution.
+        -->
+        <div style="max-width: 600px; margin: auto;" class="email-container">
+            <!--[if mso]>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+            <tr>
+            <td>
+            <![endif]-->
+
+            <!-- Email Body : BEGIN -->
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;" class="email-container" bgColor={{contentBgColor}}>
+          {{.dataobject DefaultPreheaderVar type=variable source=@DefaultPreheader maxrows=20}}
+  {{.data}} 
+  {"target": "@DefaultPreheader"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#DefaultPreheaderVar}} 
+
+                <!-- PREHEADER : BEGIN -->
+              %%=BeginImpressionRegion("Preheader")=%%
+                <tr>
+                         <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
+                       
+                                              
+                              
+
+                      %%=ContentBlockByKey("2Column_Layout")=%%
+                     
+                      
+                      
+                             
+                         
+                    </td>
+                </tr>{{/DefaultPreheaderVar}}
+              %%=EndImpressionRegion(0)=%%
+                <!-- PREHEADER : END -->
+    
+     <!-- HEADER : BEGIN -->
+                                {{.dataobject DefaultHeaderVar type=variable source=@DefaultHeader maxrows=20}}
+  {{.data}} 
+  {"target": "@DefaultHeader"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#DefaultHeaderVar}}   
+              %%=BeginImpressionRegion("Header")=%%
+                <tr>
+                     <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
+                       
+                                              
+                              
+
+                      %%=ContentBlockByKey("2Column_Layout")=%%
+                     
+                      
+                      
+                             
+                         
+                    </td>
+                </tr>
+              {{/DefaultHeaderVar}} 
+              %%=EndImpressionRegion(0)=%%
+                <!-- HEADER : END -->
+
+                <!-- HERO : BEGIN -->
+                  {{.dataobject DefaultHeroVar type=variable source=@DefaultHero maxrows=20}}
+  {{.data}} 
+  {"target": "@DefaultHero"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#DefaultHeroVar}} 
+              %%=BeginImpressionRegion("Hero")=%%
+                               <tr>
+                        <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
+                       
+                                              
+                              
+
+                      %%=ContentBlockByKey("hero_title")=%%
+                     
+                      
+                      
+                             
+                         
+                    </td>
+                </tr>
+              %%=EndImpressionRegion(0)=%%
+               {{/DefaultHeroVar}} 
+                <!-- HERO : END -->
+
+                <!-- BODY : BEGIN -->
+                                {{.dataobject DefaultBodyVar type=variable source=@DefaultBody maxrows=20}}
+  {{.data}} 
+  {"target": "@DefaultBody"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#DefaultBodyVar}} 
+                                <tr>
+                    <td bgcolor={{bgColor}} style="{{slotPadding}}">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                            <!-- SLOT1 : BEGIN -->
+
+                                        {{.dataobject BodySlot1Var type=variable source=@BodySlot1 maxrows=20}}
+                            {{.data}} 
+  {"target": "@BodySlot1"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#BodySlot1Var}} 
+                               <tr>
+                    <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
+                       
+                                              
+                              
+
+                      %%=ContentBlockByKey("CTA_Layout")=%%
+                     
+                      
+                      
+                             
+                         
+                    </td>
+                </tr>
+               {{/BodySlot1Var}} 
+                <!-- SLOT 1 : END -->
+        <tr>
+                                                                          <!-- SLOT2 : BEGIN -->
+
+                                        {{.dataobject BodySlot2Var type=variable source=@BodySlot2 maxrows=20}}
+                            {{.data}} 
+  {"target": "@BodySlot2"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#BodySlot2Var}} 
+                               <tr>
+                    <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
+                       
+                                              
+                              
+
+                      %%=ContentBlockByKey("Copy_Layout")=%%
+                     
+                      
+                      
+                             
+                         
+                    </td>
+                </tr>
+               {{/BodySlot2Var}} 
+                <!-- SLOT 2 : END -->
+                            
+        <tr>
+                                                                     <!-- SLOT3 : BEGIN -->
+
+                                        {{.dataobject BodySlot3Var type=variable source=@BodySlot3 maxrows=20}}
+                            {{.data}} 
+  {"target": "@BodySlot3"} 
+  {{/data}}
+  {{/dataobject}}
+  {{#BodySlot3Var}} 
+                               <tr>
+                    <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
+                       
+                                              
+                              
+
+                      %%=ContentBlockByKey("2Column_List_Layout3")=%%
+                     
+                      
+                      
+                             
+                         
+                    </td>
+                </tr>
+               {{/BodySlot3Var}} 
+                <!-- SLOT 3 : END -->
+        <tr>
+                              <!--  {{slot4}} -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+               {{/DefaultBodyVar}} 
+                <!-- BODY : END -->
+
+              
+
+                <!-- SOCIAL : BEGIN -->
+                            <tr>
+                    <td bgcolor={{bgColor}}>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                             <!--   {{socialFooter}} -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- SOCIAL : END -->
+
+                <!-- LEGAL : BEGIN -->
+                                 <tr>
+                    <td bgcolor={{bgColor}}>
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                            <tr>
+                              <!--  {{legal}} -->
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <!-- LEGAL<br>
+ : END -->
+
+            </table>
+            <!-- Email Body : END -->
+
+            <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </div>
+
+    </center>
+</body>
+ {{/DefaultOrganismsVar}}
+ {{/DefaultStylesVar}} 
+</html>
