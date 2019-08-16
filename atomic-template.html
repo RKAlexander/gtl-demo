@@ -205,115 +205,106 @@
     <![endif]-->
    %%[
  var @leadid
- set @leadid = leadid
+ set @leadid = "90606DDA01"
+ var @subjectline 
+ var @previewText
  var @Json2
- set @Json2 = ' {
-    "defaultStyles": {
-        "bgColor": "#C4C6CA",
-        "contentBgColor": "#FFFFFF",
-        "textColor": "#243444"
+ set @Json2 = '{
+  "theme": {
+    "bgColor": "#C4C6CA",
+    "contentBgColor": "#FFFFFF",
+    "textColor": "#243444"
+  },
+  "subscriber": {
+    "leadid": "90606DDA01",
+    "subjectline": "Remember to use your PNC Mobile app this summer.",
+    "previewText": "Enjoy the convenience of your PNC Mobile app."
+  },
+  "preheader": {
+   "type": "2Column_Layout",
+    "ratio": "7030",
+    "bgColor": "#FFFFFF",
+    "textColor": "#243444",
+    "leftColumn": "preheaderMessage",
+    "leftStackStyle": "stack-column",
+    "preheaderMessage": "It\u2019s time to get started with PNC WorkPlace Banking\u00ae and Virtual Wallet\u00ae.",
+    "rightColumn": "vawpLink",
+    "rightStackStyle": "stack-column-left"
+  },
+  "header": {
+    "type": "2Column_Layout",
+    "bgColor": "#757C85",
+    "textColor": "#FFFFFF",
+    "leftColumn": "virtualWalletLogo_white",
+    "leftStackStyle": "stack-column",
+    "rightColumn": "header_nav",
+    "rightStackStyle": "stack-column-hide"
+  },
+  "hero": {
+    "layout": "1Column_Layout",
+    "contentType": "hero_title",
+    "bgColor": "#FFFFFF",
+    "contentBgColor": "#333F48",
+    "textColor": "#FFFFFF",
+    "content": "Welcome to PNC WorkPlace\u00ae Banking and Virtual Wallet\u00ae for digital banking.",
+    "slotPadding": "padding:0;",
+    "blockPadding": "padding:0;",
+    "contentPadding":"padding:40px;"
+  },
+  "bodySection": {
+    "slot1": {
+      "layout": "CTA_Layout",
+      "bgColor": "#FFFFFF",
+      "blockPadding": "padding:0 36px;",
+      "slotPadding": "padding:10px 0;",
+      "lead": "Get started by setting up Direct Deposit.",
+      "leadTextColor": "#F58025",
+      "pColor": "#243444",
+      "paragraph": "Get your paycheck the same day that you&apos;re paid.",
+      "cta": "Learn More &gt;",
+      "ctaBgColor": "#F58025",
+      "ctaAlias": "cta_test_alias",
+      "ctaLink": "https:\/\/www.pnc.com",
+      "ctaTextColor": "#FFFFFF"
     },
-    "defaultOrganisms": {
-        "leadid": "90606DDA01",
-        "subjectline": "Remember to use your PNC Mobile app this summer.",
-        "previewText": "Enjoy the convenience of your PNC Mobile app.",
-        "preheader":{
-        "type":"2Column_Layout",
-            "ratio":"7030",
-            "bgColor": "#FFFFFF",
-            "textColor": "#243444",
-            "leftColumn": "preheaderMessage",
-            "leftStackStyle":"stack-column",
-            
-            "preheaderMessage": "It’s time to get started with PNC WorkPlace Banking® and Virtual Wallet®.",
-            "rightColumn": "vawpLink",
-            "rightStackStyle":"stack-column-left"
-            
-        },
-        "header": {
-        "type":"2Column_Layout",
-            "bgColor": "#5B6771",
-            "textColor": "#FFFFFF",
-            "leftColumn": "virtualWalletLogo_white",
-            "leftStackStyle":"stack-column",
-            "rightColumn": "header_nav",
-            "rightStackStyle":"stack-column-hide"
-        },
-        "hero": {
-              "layout":"1Column_Layout",
-              "contentType":"hero_title",
-              "bgColor":"#FFFFFF",
-              "contentBgColor":"#243444",
-              "textColor":"#FFFFFF",
-              "content":"Welcome to PNC WorkPlace® Banking and Virtual Wallet® for digital banking.",
-              "slotPadding":"padding:15px 0;",
-              "blockPadding":"padding:25px 36px;"
-        },
-        "bodySection":{
-        "slot1":{
-        "layout":"CTA_Layout",
-        "bgColor":"#FFFFFF",
-        "blockPadding":"padding:0 36px;",
-        "slotPadding":"padding:10px 0;",
-        
-        "lead":"Get started by setting up Direct Deposit.",
-        "leadTextColor":"#F58025",
-        "pColor":"#243444",
-          "paragraph":"Get your paycheck the same day that you&apos;re paid.",
-          "cta":"Learn More &gt;",
-          "ctaBgColor":"#F58025",
-        "ctaAlias":"cta_test_alias",
-        "ctaLink":"https://www.pnc.com",
-        "ctaTextColor":"#FFFFFF"
-        },
-         "slot2":{
-        "layout":"CTA_Layout",
-        "bgColor":"#FFFFFF",
-        "contentBgColor":"#C4C6CA",
-         "blockPadding":"padding:0 15px;",
-        "slotPadding":"padding:10px 0;",
-        "contentPadding":"padding:26px;",
-        
-        "lead":"Be on the lookout.",
-        "leadTextColor":"#243444",
-        "pColor":"#243444",
-          "paragraph":"Your account information, which includes your account number, routing number, debit card and online banking/debit card PIN, is on its way in the mail – if it hasn’t already arrived."
-        },
-                 "slot3":{
-        "layout":"2Column_List_Layout",
-        "bgColor":"#FFFFFF",
-        "contentBgColor":"#FFFFFF",
-         "blockPadding":"padding:0 15px;",
-        "slotPadding":"padding:10px 0;",
-        "contentPadding":"padding:26px;",
-     "lead":"Budget better with our money management tools.",
-        "leadTextColor":"#F58025",
-        "pColor":"#243444",
-            "ratio":"5050",
-            "bgColor": "#FFFFFF",
-            "textColor": "#243444",
-            "leftColumn": "HorizontalListItem",
-            "leftColumnListItem":{
-            "listItemImage":"Icon_VW_SpendingBudgets",
-            "listItemLead":"This is my left lead tttile",
-            "listItemParagraph":"This is my left paragraph"
-            },
-         
-            "leftStackStyle":"stack-column",
-            "rightColumn": "HorizontalListItem",
-            "rightStackStyle":"stack-column",
-           
-            "rightColumnlistItemImage":"Icon_VW_SpendingBudgets",
-            "rightColumnLead":"This is my tight lead tttile",
-            "rightColumnParagraph":"This is my right paragraph"
-            
-            
-        }
-        
-        
-          
-}
+    "slot2": {
+      "layout": "CTA_Layout",
+      "bgColor": "#FFFFFF",
+      "contentBgColor": "#C4C6CA",
+      "blockPadding": "padding:0 15px;",
+      "slotPadding": "padding:10px 0;",
+      "contentPadding": "padding:26px;",
+      "lead": "Be on the lookout.",
+      "leadTextColor": "#243444",
+      "pColor": "#243444",
+      "paragraph": "Your account information, which includes your account number, routing number, debit card and online banking\/debit card PIN, is on its way in the mail \u2013 if it hasn\u2019t already arrived."
+    },
+    "slot3": {
+      "layout": "2Column_List_Layout",
+      "contentBgColor": "#FFFFFF",
+      "blockPadding": "padding:0 15px;",
+      "slotPadding": "padding:10px 0;",
+      "contentPadding": "padding:26px;",
+      "lead": "Budget better with our money management tools.",
+      "leadTextColor": "#F58025",
+      "pColor": "#243444",
+      "ratio": "5050",
+      "bgColor": "#FFFFFF",
+      "textColor": "#243444",
+      "leftColumn": "HorizontalListItem",
+      "leftColumnListItem": {
+        "listItemImage": "Icon_VW_SpendingBudgets",
+        "listItemLead": "This is my left lead tttile",
+        "listItemParagraph": "This is my left paragraph"
+      },
+      "leftStackStyle": "stack-column",
+      "rightColumn": "HorizontalListItem",
+      "rightStackStyle": "stack-column",
+      "rightColumnlistItemImage": "Icon_VW_SpendingBudgets",
+      "rightColumnLead": "This is my tight lead tttile",
+      "rightColumnParagraph": "This is my right paragraph"
     }
+  }
 }' 
 ]%%
 
@@ -329,31 +320,28 @@
     Platform.Load("Core","1");
     var Json=Variable.GetValue("@Json2");
     var _JsonObject = eval('(' + Json + ')');
-    set("@DefaultStyles", _JsonObject.defaultStyles);
-    set("@DefaultOrganisms", _JsonObject.defaultOrganisms);
-    set("@DefaultHeader", _JsonObject.defaultOrganisms.header);
-          set("@DefaultPreheader", _JsonObject.defaultOrganisms.preheader);
-           set("@DefaultHero", _JsonObject.defaultOrganisms.hero);
-          set("@DefaultBody", _JsonObject.defaultOrganisms.bodySection);
-          set("@BodySlot1", _JsonObject.defaultOrganisms.bodySection.slot1);
-          set("@BodySlot2", _JsonObject.defaultOrganisms.bodySection.slot2);
-           set("@BodySlot3", _JsonObject.defaultOrganisms.bodySection.slot3);
+    set("@Theme", _JsonObject.theme);
+    set("@Subscriber", _JsonObject.subscriber);
+
+   
+    set("@Preheader", _JsonObject.preheader);
+          set("@Header", _JsonObject.header);
+           set("@Hero", _JsonObject.hero);
+          set("@Body", _JsonObject.bodySection);
+          set("@BodySlot1", _JsonObject.bodySection.slot1);
+          set("@BodySlot2", _JsonObject.bodySection.slot2);
+           set("@BodySlot3", _JsonObject.bodySection.slot3);
           
           //Write(_JsonObject.defaultOrganisms.bodySection.slot3.pColor);
           
   </script>
-        {{.dataobject DefaultStylesVar type=variable source=@DefaultStyles maxrows=20}}
+        {{.dataobject ThemeVar type=variable source=@Theme maxrows=20}}
   {{.data}} 
-  {"target": "@DefaultStyles"} 
+  {"target": "@Theme"} 
   {{/data}}
   {{/dataobject}}
-  {{#DefaultStylesVar}}  
-  {{.dataobject DefaultOrganismsVar type=variable source=@DefaultOrganisms maxrows=20}}
-  {{.data}} 
-  {"target": "@DefaultOrganisms"} 
-  {{/data}}
-  {{/dataobject}}
-  {{#DefaultOrganismsVar}}
+  {{#ThemeVar}}  
+
  
 <body width="100%" bgcolor="{{bgColor}}" style="margin: 0; mso-line-height-rule: exactly;">
     <center style="width: 100%; background: {{bgClor}}; text-align: left;">
@@ -380,12 +368,12 @@
 
             <!-- Email Body : BEGIN -->
             <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;" class="email-container" bgColor={{contentBgColor}}>
-          {{.dataobject DefaultPreheaderVar type=variable source=@DefaultPreheader maxrows=20}}
+          {{.dataobject PreheaderVar type=variable source=@Preheader maxrows=20}}
   {{.data}} 
-  {"target": "@DefaultPreheader"} 
+  {"target": "@Preheader"} 
   {{/data}}
   {{/dataobject}}
-  {{#DefaultPreheaderVar}} 
+  {{#PreheaderVar}} 
 
                 <!-- PREHEADER : BEGIN -->
               %%=BeginImpressionRegion("Preheader")=%%
@@ -402,17 +390,17 @@
                              
                          
                     </td>
-                </tr>{{/DefaultPreheaderVar}}
+                </tr>{{/PreheaderVar}}
               %%=EndImpressionRegion(0)=%%
                 <!-- PREHEADER : END -->
     
      <!-- HEADER : BEGIN -->
-                                {{.dataobject DefaultHeaderVar type=variable source=@DefaultHeader maxrows=20}}
+                                {{.dataobject HeaderVar type=variable source=@Header maxrows=20}}
   {{.data}} 
-  {"target": "@DefaultHeader"} 
+  {"target": "@Header"} 
   {{/data}}
   {{/dataobject}}
-  {{#DefaultHeaderVar}}   
+  {{#HeaderVar}}   
               %%=BeginImpressionRegion("Header")=%%
                 <tr>
                      <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
@@ -428,17 +416,17 @@
                          
                     </td>
                 </tr>
-              {{/DefaultHeaderVar}} 
+              {{/HeaderVar}} 
               %%=EndImpressionRegion(0)=%%
                 <!-- HEADER : END -->
 
                 <!-- HERO : BEGIN -->
-                  {{.dataobject DefaultHeroVar type=variable source=@DefaultHero maxrows=20}}
+                  {{.dataobject HeroVar type=variable source=@Hero maxrows=20}}
   {{.data}} 
-  {"target": "@DefaultHero"} 
+  {"target": "@Hero"} 
   {{/data}}
   {{/dataobject}}
-  {{#DefaultHeroVar}} 
+  {{#HeroVar}} 
               %%=BeginImpressionRegion("Hero")=%%
                                <tr>
                         <td bgcolor="{{bgColor}}" style="{{blockPadding}}">
@@ -455,16 +443,16 @@
                     </td>
                 </tr>
               %%=EndImpressionRegion(0)=%%
-               {{/DefaultHeroVar}} 
+               {{/HeroVar}} 
                 <!-- HERO : END -->
 
                 <!-- BODY : BEGIN -->
-                                {{.dataobject DefaultBodyVar type=variable source=@DefaultBody maxrows=20}}
+                                {{.dataobject BodyVar type=variable source=@Body maxrows=20}}
   {{.data}} 
-  {"target": "@DefaultBody"} 
+  {"target": "@Body"} 
   {{/data}}
   {{/dataobject}}
-  {{#DefaultBodyVar}} 
+  {{#BodyVar}} 
                                 <tr>
                     <td bgcolor={{bgColor}} style="{{slotPadding}}">
                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
@@ -549,7 +537,7 @@
                         </table>
                     </td>
                 </tr>
-               {{/DefaultBodyVar}} 
+               {{/BodyVar}} 
                 <!-- BODY : END -->
 
               
@@ -591,6 +579,6 @@
 
     </center>
 </body>
- {{/DefaultOrganismsVar}}
- {{/DefaultStylesVar}} 
+
+ {{/ThemeVar}} 
 </html>
