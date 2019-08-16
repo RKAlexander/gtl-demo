@@ -253,7 +253,9 @@
   },
   "bodySection": {
     "slot1": {
+		
       "layout": "CTA_Layout",
+		"slotPadding":"15px 0;",
       "bgColor": "#FFFFFF",
       "blockPadding": "padding:0 36px;",
       "slotPadding": "padding:10px 0;",
@@ -312,7 +314,7 @@
  
  
 
-        <script runat=server>
+        <script runat="server">
     function set(key, val) {
       var newVal = val != null ? Stringify(val) : "{}";
       Variable.SetValue(key, newVal);
